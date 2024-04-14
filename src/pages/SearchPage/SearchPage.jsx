@@ -1,7 +1,5 @@
 // src/pages/SearchPage/SearchPage.jsx
-import React, {useEffect, useState} from 'react';
-import {useNavigate} from 'react-router-dom';
-import {useAuth} from '../../hooks/AuthContext';
+import React from 'react';
 
 import styles from './SearchPage.module.scss';
 import CompanyINN from './CompanyINN/CompanyINN';
@@ -13,50 +11,37 @@ import CheckboxBlock from './CheckboxBlock/CheckboxBlock';
 import LargePicture from "../../assets/search_page_large_picture.svg"
 import Folders from "../../assets/search_page_small_picture_folders.svg"
 import Documents from "../../assets/search_page_small_picture_sheet.svg"
+import {useSearchForm} from "../../hooks/useSearchForm";
 
 const SearchPage = () => {
-  const [companyINN, setCompanyINN] = useState('');
-  const [tonality, setTonality] = useState('Любая');
-  const [documentCount, setDocumentCount] = useState('');
-  const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
-  const [checkboxStates, setCheckboxStates] = useState({
-    maxCompleteness: false,
-    businessMentions: false,
-    mainRole: false,
-    riskFactorsOnly: false,
-    includeMarketNews: true,
-    includeAnnouncements: true,
-    includeNewsSummaries: true,
-  });
-
-  const { isLoggedIn } = useAuth();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (!isLoggedIn) {
-      navigate('/auth');
-    }
-  }, [isLoggedIn, navigate]);
-
-  const [isFormValid, setIsFormValid] = useState(false);
-
-  useEffect(() => {
-
-    const isValid = companyINN && documentCount && startDate && endDate;
-    setIsFormValid(isValid);
-  }, [companyINN, documentCount, startDate, endDate, checkboxStates]);
-
-  const handleCheckboxChange = (event) => {
-    const { name, checked } = event.target;
-    setCheckboxStates(prevState => ({
-      ...prevState,
-      [name]: checked,
-    }));
-  };
+  const {
+    companyINN,
+    setCompanyINN,
+    tonality,
+    setTonality,
+    documentCount,
+    setDocumentCount,
+    startDate,
+    setStartDate,
+    endDate,
+    setEndDate,
+    checkboxStates,
+    handleCheckboxChange,
+    isFormValid,
+    navigate,
+  } = useSearchForm();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    const {
+      maxCompleteness,
+      mainRole,
+      riskFactorsOnly,
+      includeMarketNews,
+      includeAnnouncements,
+      includeNewsSummaries
+    } = checkboxStates;
 
     let apiTonality;
     switch (tonality) {
@@ -77,32 +62,28 @@ const SearchPage = () => {
       const searchParams = {
         issueDateInterval: {
           startDate: `${startDate}T00:00:00+03:00`,
-          endDate: `${endDate}T23:59:59+03:00`
+          endDate: `${endDate}T23:59:59+03:00`,
         },
         searchContext: {
           targetSearchEntitiesContext: {
-            targetSearchEntities: [{
-              type: "company",
-              inn: companyINN,
-              maxFullness: checkboxStates.maxCompleteness,
-            }],
-            onlyMainRole: checkboxStates.mainRole,
+            targetSearchEntities: [{ type: "company", inn: companyINN, maxFullness: maxCompleteness }],
+            onlyMainRole: mainRole,
             tonality: apiTonality,
-            onlyWithRiskFactors: checkboxStates.riskFactorsOnly,
-          }
+            onlyWithRiskFactors: riskFactorsOnly,
+          },
         },
         attributeFilters: {
-          excludeTechNews: !checkboxStates.includeMarketNews,
-          excludeAnnouncements: !checkboxStates.includeAnnouncements,
-          excludeDigests: !checkboxStates.includeNewsSummaries,
+          excludeTechNews: !includeMarketNews,
+          excludeAnnouncements: !includeAnnouncements,
+          excludeDigests: !includeNewsSummaries,
         },
         limit: Number(documentCount),
         sortType: "sourceInfluence",
         sortDirectionType: "desc",
         intervalType: "month",
-        histogramTypes: ["totalDocuments", "riskFactors"]
+        histogramTypes: ["totalDocuments", "riskFactors"],
       };
-      navigate('/results', { state: { searchParams: searchParams } });
+      navigate('/results', { state: { searchParams } });
     } else {
       console.log('Форма не валидна.');
     }
