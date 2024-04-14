@@ -1,0 +1,256 @@
+@import '../../../styles/_variables.scss';
+
+
+.resultPage__tariffCard {
+	width: 415px;
+	height: 540px;
+	max-height: 540px;
+	border: 0;
+	border-radius: 10px;
+	box-shadow: 0 0 10px 0 var(--scan-shadow);
+	margin: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.resultPage__tariffColoredBlock {
+	max-height: 132px;
+	width: 100%;
+	padding: 15px;
+	border-radius: 10px 10px 0 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.resultPage__tariffNameBlock {
+	margin: 30px 10px 10px;
+}
+
+.resultPage__tariffNameBlock h3 {
+	margin: 0;
+	color: var(--scan-black);
+	font-family: 'InterMedium', sans-serif;
+	font-size: 30px;
+}
+
+.resultPage__tariffNameBlock p {
+	color: var(--scan-black);
+	font-size: 16px;
+	white-space: nowrap;
+	max-width: 90%;
+}
+
+.resultPage__tariffIconBlock {
+	max-width: 100px;
+	max-height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.resultPage__tariffIcon {
+	width: auto;
+	height: auto;
+}
+
+.resultPage__tariffCardTextBlock {
+	align-self: flex-start;
+	width: 100%;
+	height: 80px;
+	padding-left: 30px;
+}
+
+.resultPage__yourTariffBlock {
+	min-height: 60px;
+	width: 100%;
+	display: flex;
+	justify-content: end;
+	align-items: center;
+	padding-right: 12px;
+	margin-bottom: -10px;
+}
+
+.resultPage__yourTariffBadge {
+	width: 134px;
+	height: 24px;
+	background-color: #3BA5E0;
+	border-radius: 10px;
+	color: var(--scan-black);
+	font-size: 14px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.resultPage__tariffPriceBlock {
+	margin-bottom: 30px;
+}
+
+.resultPage__tariffPrices {
+	display: flex;
+	align-items: baseline;
+	gap: 20px;
+}
+
+.resultPage__tariffPrices h3 {
+	color: var(--scan-black);
+	font-family: 'InterMedium', sans-serif;
+	font-size: 30px;
+}
+
+.resultPage__lastPriceTag {
+	text-decoration: line-through;
+	font-family: 'InterMedium', sans-serif;
+	font-size: 25px;
+	color: #D2D2D2;
+}
+
+.resultPage__tariffPrices h3, .resultPage__lastPriceTag {
+	margin: 0;
+}
+
+.resultPage__cardText {
+	color: var(--scan-black);
+	font-size: 18px;
+}
+
+.resultPage__cardText20px {
+	font-size: 20px;
+	font-family: 'InterMedium', sans-serif;
+	margin-left: -10px;
+}
+
+.resultPage__installmentText {
+	margin-top: -30px;
+	font-size: 18px;
+}
+
+.resultPage__tariffToIncludeLines {
+	display: flex;
+	font-family: 'InterRegular', sans-serif;
+	font-size: 18px;
+	align-items: center;
+}
+
+.resultPage__greenCheckbox {
+	margin-right: 10px;
+	width: 24px;
+	height: auto;
+}
+
+.resultPage__tariffButtonDiv {
+	margin-top: 70px;
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: center;
+}
+
+.resultPage__buttonTariffs {
+	width: 335px;
+	height: 59px;
+	border-radius: 5px;
+	font-family: 'InterRegular', sans-serif;
+	font-size: 22px;
+	color: var(--scan-white);
+	background-color: var(--scan-blue);
+	border: none;
+	transition: background-color 0.3s ease;
+}
+
+.resultPage__buttonTariffs.resultPage__grey {
+	background-color: #D2D2D2;
+	color: var(--scan-black);
+}
+
+.resultPage__buttonTariffs:not(:disabled):hover {
+	cursor: pointer;
+	background-color: var(--scan-light-blue);
+	color: var(--scan-black);
+}
+
+@media (max-width: 1360px) {
+	.resultPage__tariffCard {
+		width: 335px;
+		min-width: 335px;
+		height: 512px;
+		max-height: 512px;
+	}
+
+	.resultPage__tariffColoredBlock {
+		width: 335px;
+		height: 132px;
+		padding: 15px;
+	}
+
+	.resultPage__yourTariffBlock {
+		min-height: 60px;
+		width: 100%;
+		display: flex;
+		justify-content: end;
+		align-items: center;
+		padding-right: 12px;
+		margin-bottom: -10px;
+	}
+
+
+	.resultPage__tariffNameBlock h3 {
+		font-size: 20px;
+		margin-bottom: 22px;
+
+	}
+
+	.resultPage__tariffNameBlock p {
+		font-size: 16px;
+		margin-bottom: 22px;
+
+	}
+
+	.resultPage__tariffIconBlock {
+		width: 80px;
+		height: 80px;
+		margin-bottom: 60px;
+	}
+
+	.resultPage__tariffCardTextBlock {
+		margin-bottom: 20px;
+	}
+
+	.resultPage__tariffCardTextBlock {
+		padding-left: 20px;
+		min-height: 70px;
+	}
+
+	.resultPage__cardText {
+		font-size: 16px;
+	}
+
+	.resultPage__cardText20px {
+		font-size: 18px;
+		margin-left: 20px;
+	}
+
+	.resultPage__installmentText {
+		width: 90%;
+		font-size: 16px;
+	}
+
+	.resultPage__tariffToIncludeLines {
+		display: flex;
+		font-family: 'InterRegular', sans-serif;
+		font-size: 18px;
+		align-items: center;
+	}
+
+	.resultPage__tariffButtonDiv {
+		margin-top: 50px;
+		margin-bottom: 20px;
+	}
+
+	.resultPage__buttonTariffs {
+		width: 287px;
+		height: 59px;
+		font-size: 18px;
+	}
+}

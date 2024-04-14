@@ -1,0 +1,85 @@
+@import 'reset.scss';
+@import '_variables.scss';
+@import '_mixins.scss';
+
+/* Project styles */
+@font-face {
+    font-family: 'Ferry';
+    src: local('ferry'), url('../fonts/ferry.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'InterRegular';
+    src: local('InterRegular'), url('../fonts/InterRegular.ttf') format('truetype');
+}
+
+//@font-face {
+//    font-family: 'InterMedium';
+//    src: local('InterMedium'), url('../fonts/InterMedium.ttf') format('truetype');
+//}
+//
+//@font-face {
+//    font-family: 'InterBold';
+//    src: local('InterBold'), url('../fonts/InterBold.ttf') format('truetype');
+//}
+
+body, html {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "InterRegular", sans-serif;
+    font-size: 14px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+h1 {
+    font-family: Ferry, sans-serif;
+    font-size: 60px;
+}
+
+h2 {
+    font-family: Ferry, sans-serif;
+    font-size: 45px;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+input {
+    font-family: 'InterRegular', sans-serif;
+    font-size: 16px;
+}
+
+@media (max-width: 1360px) {
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 28px;
+        width: 274px;
+    }
+
+    .app {
+        max-width: 375px;
+    }
+
+    .button {
+        font-size: 20px;
+    }
+}

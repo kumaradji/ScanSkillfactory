@@ -1,0 +1,17 @@
+.userBlocks {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    min-width: 388px;
+}
+
+
+
+@media (max-width: 1360px) {
+
+    .userBlocks {
+        min-width: auto;
+    }
+
+}
+

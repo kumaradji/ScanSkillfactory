@@ -1,0 +1,53 @@
+@import '../../../styles/_variables.scss';
+
+.tariffs {
+	background-color: var(--scan-white);
+	padding: 0 60px;
+	max-width: 1440px;
+	margin: 0 auto 100px;
+
+	&__cards {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-left: -20px;
+		margin-right: -20px;
+
+		.TariffBeginnerYellowActive {
+			border: 2px solid var(--scan-yellow);
+		}
+
+		.TariffProLightBlueActive {
+			border: 2px solid var(--scan-light-blue);
+		}
+
+		.TariffBusinessBlackActive {
+			border: 2px solid var(--scan-black);
+		}
+
+		.TariffBeginnerYellow {
+			background-color: var(--scan-yellow);
+		}
+
+		.TariffProLightBlue {
+			background-color: var(--scan-light-blue);
+		}
+
+		.TariffBusinessBlack {
+			background-color: var(--scan-black);
+		}
+	}
+}
+
+@media (max-width: 1360px) {
+	.tariffs {
+		padding: 0 14px;
+		max-width: 375px;
+		margin-bottom: 30px;
+
+		&__cards {
+			flex-direction: column;
+
+		}
+	}
+}

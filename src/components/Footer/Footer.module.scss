@@ -1,0 +1,42 @@
+footer {
+  width: 100%;
+  background-color: var(--scan-green);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 137px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.footer__textBlock {
+  text-align: right;
+  line-height: 0.1;
+  color: var(--scan-white);
+}
+
+.footer__text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+}
+
+.footer__copyright {
+  font-size: 12px;
+  line-height: 15px;
+  margin-top: 21px;
+}
+
+
+// адаптивная верстка
+@media (max-width: 1360px) {
+
+  .footer {
+    max-width: 375px;
+    padding: 0 20px;
+  }
+}

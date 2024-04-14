@@ -1,0 +1,60 @@
+// ArticleCards.module.scss
+@import '../../../styles/_mixins.scss';
+
+.articleCardsBlock {
+    margin-right: 60px;
+    margin-left: 60px;
+    width: 1346px;
+}
+
+.articleCards__h2 {
+    font-family: Ferry, sans-serif;
+    font-size: 36px;
+    margin-bottom: 60px;
+}
+
+.articleCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+}
+
+.buttonDiv {
+    display: flex;
+    justify-content: center;
+    margin: 50px 50px 0;
+}
+
+.showMore {
+    @include button($width: 335px, $height: 59px, $font-size: 22px);
+    width: 305px;
+}
+
+@media (max-width: 1360px) {
+    .articleCardsBlock {
+        margin-right: 14px;
+        margin-left: 14px;
+        width: 335px;
+    }
+
+    .articleCards__h2 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .articleCards {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .buttonDiv {
+        display: flex;
+        justify-content: center;
+        margin: 30px 0 0;
+    }
+
+    .showMore {
+        width: 335px;
+    }
+}
