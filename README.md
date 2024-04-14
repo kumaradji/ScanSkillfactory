@@ -1,70 +1,71 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Проект "СКАН" - Поиск публикаций о компаниях
 
-## Available Scripts
+## Описание
+Реальный кейс от компании «СКАН». Клиентская часть сервиса для поиска публикаций о компаниях (юридических лицах) в СМИ по ИНН. Серверная часть уже разработана компанией "СКАН".
 
-In the project directory, you can run:
+## Функциональные требования
+- Главная страница
+- Форма авторизации
+- Форма для ввода параметров поиска (ИНН компании, количество документов)
+- Страница с результатами поиска (список публикаций)
 
-### `npm start`
+## Дополнительные требования
+- Безопасная авторизация с сохранением токена в локальном хранилище
+- Разделение доступа для авторизованных и неавторизованных пользователей
+- Обязательные поля в формах, валидация, невозможность отправки незаполненной формы
+- Ленивая подгрузка данных (lazy loading) для оптимизации UX
+- Использование Redux или React Context для управления состоянием
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Установка
+1. Клонировать репозиторий
+2. Перейти в директорию проекта
+3. Установить зависимости: `npm install`
+4. Запустить проект: `npm start`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Сборка
+`npm run build` - создает оптимизированную сборку в директории build/
 
-### `npm test`
+## Ограничения
+- Макс. кол-во документов в выборке 1000, но API работает только до 45
+- Нет фото и имени пользователя (используются заглушки)
+- Не обновляются данные об использованных компаниях
+- Нет обложек для статей (используется заглушка)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Ссылка на макет Figma: https://www.figma.com/file/u3MOjzYnTnirz712GrLbFv/
 
-### `npm run build`
+## Страница результатов поиска
+Результаты поиска отображаются в виде карточек со следующими элементами:
+- Дата публикации и название источника (ссылка на оригинал)
+- Заголовок публикации
+- Теги в зависимости от свойств объекта (технические новости, анонсы, сводки новостей)
+- Содержимое публикации с картинками (если есть)
+- Кнопка "Читать в источнике" (открывает оригинал в новой вкладке)
+- Количество слов в публикации
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Реализовать ленивую подгрузку (lazy loading) результатов:
+- Изначально загружать только первые 10 результатов
+- Добавить кнопку "Показать больше" для подгрузки следующих 10 результатов
+- После загрузки всех результатов скрыть кнопку.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+На время загрузки результатов показывать лоадер
+Если результатов не найдено - отобразить соответствующее сообщение.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Общие требования
+1. Соответствие вёрстки макету (цвета, шрифты, размеры, отступы)
+2. Корректное отображение на мобильных устройствах 
+3. Семантическая вёрстка (header, main, footer, h1 и т.д.)
+4. Визуальные эффекты на ссылках и кнопках при наведении 
+5. Грамотное подключение стилей (CSS, CSS-модули, Styled Components и т.п.)
+6. Использовать классы, а не ID и теги для стилизации 
+7. SVG изображения из Figma для качественного отображения
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Требования к коду
+1. Реализация на React 
+2. Разумное разделение на компоненты 
+3. Использование продвинутых инструментов управления состоянием (useReducer, Context, Redux)
+4. Следование принципам KISS и DRY 
+5. Разумное использование сторонних библиотек 
+6. Аккуратное форматирование и осмысленные названия 
+7. Использование современного JS/React синтаксиса 
+8. Игнорирование node_modules в .gitignore
