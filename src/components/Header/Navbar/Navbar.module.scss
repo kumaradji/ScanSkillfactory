@@ -1,3 +1,8 @@
+// src/components/Header/Navbar/Navbar.module.scss
+
+@import '../../../styles/_mixins.scss';
+@import '../../../styles/_variables.scss';
+
 .navbar {
     display: flex;
     flex: 0 0 236px;

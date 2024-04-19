@@ -10,8 +10,6 @@ import './styles/styles.scss';
 
 import './fonts/ferry.otf';
 import './fonts/InterRegular.ttf';
-import './fonts/InterMedium.ttf';
-import './fonts/InterBold.ttf';
 
 import Authorization from "./components/Authorization/Authorization";
 import Header from "../src/components/Header/Header";

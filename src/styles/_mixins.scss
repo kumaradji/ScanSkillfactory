@@ -1,4 +1,5 @@
 // _mixins.scss
+
 // миксин для кнопок
 @mixin button($width: 335px, $height: 59px, $border-radius: 5px, $font-family: 'InterRegular', $font-size: 22px, $background-color: var(--scan-blue), $color: var(--scan-white), $hover-background-color: var(--scan-light-blue), $hover-color: var(--scan-black)) {
 	width: $width;
@@ -22,96 +23,9 @@
 	}
 }
 
-// миксин для форм
-@mixin form-field($margin-bottom: 30px, $label-margin-bottom: 15px, $label-font-size: 18px, $input-width: 242px, $input-padding: 8px, $input-border-radius: 4px, $input-border: 1px solid #ccc, $input-font-size: 14px, $input-box-shadow: 0 0 10px 0 #00000011, $input-focus-outline: 1px solid var(--scan-green), $input-focus-border-color: var(--scan-green), $input-error-color: #949494) {
-	.formField {
-		margin-bottom: $margin-bottom;
-
-		label {
-			display: block;
-			margin-bottom: $label-margin-bottom;
-			font-size: $label-font-size;
-		}
-
-		input[type="text"],
-		input[type="date"],
-		input[type="number"],
-		option,
-		select {
-			font-family: "InterRegular", sans-serif;
-			width: $input-width;
-			padding: $input-padding;
-			border-radius: $input-border-radius;
-			border: $input-border;
-			font-size: $input-font-size;
-			box-shadow: $input-box-shadow;
-
-			&:focus {
-				outline: $input-focus-outline;
-				border-color: $input-focus-border-color;
-			}
-		}
-	}
-
-	.formFieldInputs {
-		max-height: 82px;
-		min-height: 82px;
-	}
-
-	.inputError {
-		text-align: center;
-		color: $input-error-color;
-	}
-
-	.formField .errorMessage {
-		color: #FF5959;
-		font-size: 14px;
-		margin-top: 8px;
-		text-align: center;
-		width: 242px;
-	}
-
-	.formField input.inputError,
-	.formField select.inputError {
-		border: 1px solid #FF5959;
-		outline-color: #FF5959;
-		color: #FF5959;
-	}
-
-	.formField input.error,
-	.formField select.error {
-		border: 1px solid #FF5959;
-		outline-color: #FF5959;
+@media (max-width: 1360px) {
+	// Изменение размера шрифта кнопок при разрешении экрана до 1360px
+	.button {
+		font-size: 20px;
 	}
 }
-
-
-
-
-//
-//.button {
-//	width: 335px;
-//	height: 59px;
-//	border-radius: 5px;
-//	font-family: 'InterRegular', sans-serif;
-//	font-size: 22px;
-//	color: var(--scan-white);
-//	background-color: var(--scan-blue);
-//	border: none;
-//	transition: background-color 0.3s ease;
-//}
-//
-//.button.grey {
-//	background-color: var(--scan-button-grey);
-//	color: var(--scan-black);
-//}
-//
-//.button:not(:disabled):hover {
-//	cursor: pointer;
-//	background-color: var(--scan-light-blue);
-//	color: var(--scan-black);
-//}
-//
-//.button:disabled {
-//	opacity: 0.5;
-//}

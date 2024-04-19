@@ -1,3 +1,5 @@
+// src/components/Header/Navbar/Navbar.jsx
+
 import React from 'react';
 import styles from './Navbar.module.scss';
 

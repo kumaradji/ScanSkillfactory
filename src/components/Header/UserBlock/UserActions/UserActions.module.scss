@@ -1,3 +1,7 @@
+// UserActions.module.scss
+@import '../../../../styles/_mixins.scss';
+@import '../../../../styles/_variables.scss';
+
 .userActions__rectangle {
     display: flex;
     flex: 0 0 175px;
@@ -22,7 +26,7 @@
 .userActions__data {
     display: grid;
     grid-template-columns: 3.2fr 0.8fr;
-    grid-row-gap: 0px;
+    grid-row-gap: 0;
     grid-column-gap: 5px;
     color: rgba(0, 0, 0, 0.3);
     font-size: 10px;

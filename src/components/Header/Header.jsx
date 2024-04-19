@@ -1,13 +1,13 @@
+// src/components/Header/Header.jsx
 import React, {useEffect, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 
 import Navbar from './Navbar/Navbar';
 import UserBlock from './UserBlock/UserBlock';
 import {useAuth} from '../../hooks/AuthContext';
+import useWindowSize from '../../hooks/useWindowSize';
 
 import styles from './Header.module.scss';
-
-import useWindowSize from './useWindowSize';
 
 import greenLogo from '../../assets/scan_logo_green.svg';
 import whiteLogo from '../../assets/scan_logo_white.svg';

@@ -1,13 +1,12 @@
 // About.module.scss
-
 @import '../../../styles/_mixins.scss';
+@import '../../../styles/_variables.scss';
 
 .aboutBlock {
 	display: flex;
 	justify-content: flex-start;
 	align-items: flex-start;
 	width: 100%;
-	background-color: var(--scan-white);
 	margin: 0 auto;
 	padding: 0 60px;
 	max-width: 1440px;

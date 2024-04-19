@@ -1,3 +1,4 @@
+// src/components/Carousel/Carousel.jsx
 import React, {useRef} from 'react';
 import largePicture from "../../assets/carousel_large_picture.svg";
 import Magnifier from "../../assets/carousel_icon_magnifier.svg";

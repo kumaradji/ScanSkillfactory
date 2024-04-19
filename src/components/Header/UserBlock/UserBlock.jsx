@@ -4,8 +4,8 @@ import {useNavigate} from 'react-router-dom';
 
 import UserActions from './UserActions/UserActions';
 import UserInfo from './UserInfo/UserInfo';
-import UserPictureExample from '../../../assets/user_pic_example.png';
 
+import UserPictureExample from '../../../assets/user_pic_example.png';
 import styles from './UserBlock.module.scss';
 
 const UserBlock = ({isLoggedIn, userName, userPicture, setUserName, setUserPicture, isMobile, isMenuVisible}) => {
@@ -60,8 +60,6 @@ const UserBlock = ({isLoggedIn, userName, userPicture, setUserName, setUserPictu
       )}
 
     </div>
-
-
   );
 };
 

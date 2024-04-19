@@ -30,8 +30,8 @@ const Tariffs = ({ isLoggedIn, userTariff }) => {
           name="Pro"
           description="Для HR и фрилансеров"
           icon={Target}
-          colorClass={styles.TariffProLightBlue}
-          activeColorClass={styles.TariffProLightBlueActive}
+          colorClass={styles.TariffProGreen}
+          activeColorClass={styles.TariffProGreenActive}
           isActive={userTariff === 'pro'}
           isLoggedIn={isLoggedIn}
           textColorClass="black"

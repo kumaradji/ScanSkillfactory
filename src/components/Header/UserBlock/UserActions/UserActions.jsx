@@ -1,3 +1,5 @@
+// src/components/Header/UserBlock/UserActions/UserActions.jsx
+
 import React, {useEffect, useState} from 'react';
 import Loading from '../../../../assets/loading_icon.svg';
 import styles from './UserActions.module.scss';

@@ -1,15 +1,15 @@
 // Authorization.module.scss
 @import '../../styles/_mixins.scss';
+@import '../../styles/_variables.scss';
 
 .authPage {
 	width: 100%;
-	background-color: var(--scan-white);
 	padding-top: 123px;
 	max-width: 1440px;
 	flex-grow: 1;
 	display: flex;
 	justify-content: space-around;
-	margin-bottom: 60px;
+	margin: 0 auto 60px;
 }
 
 .authPage__titlePicture {
@@ -47,7 +47,7 @@
 	height: 523px;
 	border: 0;
 	border-radius: 10px;
-	box-shadow: 0 0 10px 0 #00000033;
+	box-shadow: 0 0 10px 0 var(--scan-shadow);
 	margin-top: -40px;
 	margin-left: 45px;
 	padding: 30px;
@@ -69,7 +69,7 @@
 	cursor: pointer;
 	padding-bottom: 5px;
 	border-bottom: 2px solid;
-	border-color: #C7C7C7;
+	border-color: var(--scan-light-grey);
 	text-align: center;
 	font-size: 16px;
 	padding-right: 35px;
@@ -80,15 +80,15 @@
 .authBlock__authForm_tab_active {
 	cursor: pointer;
 	padding-bottom: 5px;
-	border-color: #029491;
+	border-color: var(--scan-green);
 	text-align: center;
 	font-size: 16px;
-	color: #C7C7C7;
+	color: var(--scan-light-grey);
 
 }
 
 .authBlock__authForm_tab_inactive {
-	color: #C7C7C7;
+	color: var(--scan-light-grey);
 }
 
 .authBlock__authForm form {
@@ -101,7 +101,7 @@
 .authBlock__authForm label {
 	display: block;
 	margin-bottom: 15px;
-	color: #949494;
+	color: var(--scan-light-green);
 }
 
 .authBlock__authForm_input {
@@ -114,9 +114,9 @@
 	width: 379px;
 	height: 43px;
 	padding: 8px;
-	border: 1px solid #C7C7C7;
+	border: 1px solid var(--scan-light-grey);
 	border-radius: 5px;
-	box-shadow: 0 0 10px 0 #00000011;
+	box-shadow: 0 0 10px 0 var(--scan-shadow-light);
 }
 
 .authBlock__authForm input:focus {
@@ -276,6 +276,11 @@
 
 	.authBlock__authForm input:focus {
 		font-size: 14px;
+	}
+
+	.authBlock__authForm_button {
+		width: 305px;
+		height: 59px;
 	}
 
 	.authBlock__authForm_button_div {

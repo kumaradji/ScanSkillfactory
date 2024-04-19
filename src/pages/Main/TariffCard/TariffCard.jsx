@@ -1,7 +1,7 @@
 // TariffCard.jsx
 import React from 'react';
 import styles from './TariffCard.module.scss';
-import tariffs_green_checkbox_icon from "../../../assets/tariffs_green_checkbox_icon.svg";
+import Checkbox from "../../../assets/tariffs_green_checkbox_icon.svg";
 
 const TariffCard = ({
                       name,
@@ -52,7 +52,7 @@ const TariffCard = ({
         <p className={styles.resultPage__cardText20px}>В тариф входит:</p>
         {features.map((feature, index) => (
           <div key={index} className={styles.resultPage__tariffToIncludeLines}>
-            <img className={styles.resultPage__greenCheckbox} src={tariffs_green_checkbox_icon} alt="checkbox"/>
+            <img className={styles.resultPage__greenCheckbox} src={Checkbox} alt="checkbox"/>
             <p className={styles.resultPage__cardText}>{feature}</p>
           </div>
         ))}

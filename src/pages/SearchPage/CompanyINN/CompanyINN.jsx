@@ -1,81 +1,66 @@
+// src/pages/SearchPage/CompanyINN/CompanyINN.jsx
+/**
+ * CompanyINN Component
+ *
+ * This component handles the input of a company's INN (Individual Taxpayer Identification Number) in a React application.
+ * It provides functionality for input validation and error display.
+ *
+ * Props:
+ *   - companyINN: string - The INN value of the company
+ *   - setCompanyINN: function - A function to update the companyINN state
+ *
+ * State:
+ *   - error: string - Holds the error message for input validation
+ *
+ * useEffect:
+ *   - Runs the validation function whenever the companyINN prop changes and updates the error state accordingly.
+ *
+ * Render:
+ *   - Renders a label and an input field for the company's INN.
+ *   - The input field is bound to the companyINN state.
+ *   - onChange event updates the companyINN state and clears any existing error.
+ *   - onBlur event re-validates the input when focus is lost.
+ *   - If there's an error, it displays an error message below the input field.
+ *
+ * Dependencies:
+ *   - React: For building the component
+ *   - CompanyINN.module.scss: Styles for the component
+ *   - validateINN: Utility function for validating the company's INN
+ */
+
 import React, {useEffect, useState} from 'react';
-import styles from './CompanyINN.module.scss';
+import styles from './CompanyINN.module.scss'; // Importing styles
+import validateINN from '../../../utils/validateINN'; // Importing utility function for INN validation
 
-const CompanyINN = ({ companyINN, setCompanyINN }) => {
-  const [error, setError] = useState('');
+const CompanyINN = ({ companyINN, setCompanyINN }) => { // Component function accepting props
+  const [error, setError] = useState(''); // State for holding error message
 
-  const validateInn = (inn) => {
-    let errorObj = { code: 0, message: '' };
-    let result = false;
-    if (typeof inn === 'number') {
-      inn = inn.toString();
-    } else if (typeof inn !== 'string') {
-      inn = '';
-    }
-    if (!inn.length) {
-      errorObj.code = 1;
-      errorObj.message = 'Обязательное поле';
-    } else if (/[^0-9]/.test(inn)) {
-      errorObj.code = 2;
-      errorObj.message = 'Введите корректные данные';
-    } else if ([10, 12].indexOf(inn.length) === -1) {
-      errorObj.code = 3;
-      errorObj.message = 'Введите корректные данные';
-    } else {
-      const checkDigit = (inn, coefficients) => {
-        let n = 0;
-        for (let i = 0; i < coefficients.length; i++) {
-          n += coefficients[i] * inn[i];
-        }
-        return parseInt(n % 11 % 10, 10);
-      };
-      switch (inn.length) {
-        case 10:
-          var n10 = checkDigit(inn, [2, 4, 10, 3, 5, 9, 4, 6, 8]);
-          if (n10 === parseInt(inn[9], 10)) {
-            result = true;
-          }
-          break;
-        case 12:
-          var n11 = checkDigit(inn, [7, 2, 4, 10, 3, 5, 9, 4, 6, 8]);
-          var n12 = checkDigit(inn, [3, 7, 2, 4, 10, 3, 5, 9, 4, 6, 8]);
-          if ((n11 === parseInt(inn[10], 10)) && (n12 === parseInt(inn[11], 10))) {
-            result = true;
-          }
-          break;
-      }
-      if (!result) {
-        errorObj.code = 4;
-        errorObj.message = 'Введите корректные данные';
-      }
-    }
-    setError(errorObj.message);
-    return result;
-  };
-
-  useEffect(() => {
-    validateInn(companyINN);
+  useEffect(() => { // Effect for validating INN on prop change
+    const errorMessage = validateINN(companyINN); // Validate INN
+    setError(errorMessage); // Update error state
   }, [companyINN]);
 
   return (
-    <div className={`${styles.formField} ${styles.formFieldInputs}`}>
-      <label htmlFor="companyINN">ИНН компании <span className={error ? `${styles.requiredAsterisk} ${styles.error}` : styles.requiredAsterisk}>*</span></label>
+    <div className={`${styles.formField} ${styles.formFieldInputs}`}> {/* Container for label and input */}
+      <label htmlFor="companyINN">ИНН компании {/* Label for input */}
+        <span className={error ? `${styles.requiredAsterisk} ${styles.error}` : styles.requiredAsterisk}>*</span> {/* Display asterisk for required field */}
+      </label>
       <input
         type="text"
         id="companyINN"
         name="companyINN"
-        className={error ? styles.inputError : ''}
+        className={error ? styles.inputError : ''} // Apply error styles if there's an error
         value={companyINN}
         onChange={(e) => {
           setCompanyINN(e.target.value);
-          setError('');
+          setError(''); // Clear error on input change
         }}
-        onBlur={() => setError(validateInn(companyINN))}
-        placeholder="10 или 12 цифр"
+        onBlur={() => setError(validateINN(companyINN))} // Re-validate INN on blur
+        placeholder="10 цифр"
       />
-      {error && <div className={styles.errorMessage}>{error}</div>}
+      {error && <div className={styles.errorMessage}>{error}</div>} {/* Display error message if there's an error */}
     </div>
   );
 };
 
-export default CompanyINN;
+export default CompanyINN; // Export the component

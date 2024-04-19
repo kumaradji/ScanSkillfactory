@@ -1,5 +1,5 @@
+// TariffCard.module.scss
 @import '../../../styles/_variables.scss';
-
 
 .resultPage__tariffCard {
 	width: 415px;
@@ -104,7 +104,7 @@
 	text-decoration: line-through;
 	font-family: 'InterMedium', sans-serif;
 	font-size: 25px;
-	color: #D2D2D2;
+	color: var(--scan-grey);
 }
 
 .resultPage__tariffPrices h3, .resultPage__lastPriceTag {
@@ -160,7 +160,7 @@
 }
 
 .resultPage__buttonTariffs.resultPage__grey {
-	background-color: #D2D2D2;
+	background-color: var(--scan-grey);
 	color: var(--scan-black);
 }
 

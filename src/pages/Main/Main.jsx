@@ -1,3 +1,5 @@
+// Main.jsx
+
 import React from 'react';
 import About from "./About/About";
 import Tariffs from "./Tariffs/Tariffs";

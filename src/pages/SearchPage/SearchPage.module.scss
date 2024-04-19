@@ -10,7 +10,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	margin-bottom: 60px;
+	margin: 0 auto 60px;
 
 }
 
@@ -40,12 +40,12 @@
 }
 
 .searchBlock {
-	margin-top: 60px;
+	//margin-top: 60px;
 	display: flex;
 	justify-content: space-between;
 	align-items: end;
-	margin-right: 0;
-	margin-left: 60px;
+	//margin-right: 0;
+	//margin-left: 60px;
 }
 
 .searchForm {

@@ -1,8 +1,9 @@
+// src/components/Header/UserBlock/UserInfo/UserInfo.jsx
 import React from 'react';
 import {useAuth} from '../../../../hooks/AuthContext';
-import loading_icon from '../../../../assets/loading_icon.svg';
 
 import styles from './UserInfo.module.scss';
+import loading_icon from '../../../../assets/loading_icon.svg';
 
 const UserInfo = ({userName, userPicture, isLoading}) => {
   const {setIsLoggedIn} = useAuth();

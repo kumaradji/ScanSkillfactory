@@ -33,7 +33,7 @@
 
 .inputError {
 	text-align: center;
-	color: #949494;
+	color: var(--scan-light-green);
 }
 
 .formField input:focus,
@@ -45,7 +45,7 @@
 
 .inputError {
 	text-align: center;
-	color: #949494;
+	color:var(--scan-light-green);
 }
 
 .selectWrapper {
@@ -70,7 +70,16 @@
 }
 
 @media (max-width: 1360px) {
+	.formField input[type="text"],
+	.formField input[type="date"],
+	.formField input[type="number"],
+	.formField option,
+	.formField select {
+		width: 335px;
+	}
+
 	.selectWrapper {
 		width: 335px;
 	}
+
 }

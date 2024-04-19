@@ -1,3 +1,4 @@
+// Tariffs.module.scss
 @import '../../../styles/_variables.scss';
 
 .tariffs {
@@ -17,7 +18,7 @@
 			border: 2px solid var(--scan-yellow);
 		}
 
-		.TariffProLightBlueActive {
+		.TariffProGreenActive {
 			border: 2px solid var(--scan-light-blue);
 		}
 
@@ -29,8 +30,8 @@
 			background-color: var(--scan-yellow);
 		}
 
-		.TariffProLightBlue {
-			background-color: var(--scan-light-blue);
+		.TariffProGreen {
+			background-color: var(--scan-green-pro);
 		}
 
 		.TariffBusinessBlack {
