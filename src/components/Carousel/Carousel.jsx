@@ -60,7 +60,7 @@ const Carousel = () => {
           <div className={styles.carouselBlock__card}>
             <img className={styles.carouselBlock__icon} src={Watch} alt="watch icon" />
             <p>Высокая надежность
-              <br />выдачи результатов</p>
+              <br />результатов поиска</p>
           </div>
 
         </div>

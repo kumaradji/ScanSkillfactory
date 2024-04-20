@@ -1,3 +1,4 @@
+// ArticleCard.jsx
 import React, {useEffect, useState} from 'react';
 import styles from './ArticleCard.module.scss';
 
@@ -18,7 +19,6 @@ const ArticleCard = (props) => {
   const [cleanContent, setCleanContent] = useState('');
 
   useEffect(() => {
-    
     setCleanContent(cleanHtmlContent(props.content));
   }, [props.content]);
 
