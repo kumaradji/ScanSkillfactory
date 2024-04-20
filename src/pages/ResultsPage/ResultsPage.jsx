@@ -60,7 +60,9 @@ const ResultsPage = () => {
             isError={!!error}
           />
 
-          {!error && <ArticleCards documentsData={documentData} />}
+          {!error && documentData && Array.isArray(documentData) && documentData.length > 0 && (
+            <ArticleCards documentsData={documentData} />
+          )}
         </>
       )}
     </div>
