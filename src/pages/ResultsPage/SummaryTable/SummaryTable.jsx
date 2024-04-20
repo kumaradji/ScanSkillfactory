@@ -1,8 +1,8 @@
 // SummaryTable.jsx
 import React, {useEffect, useRef, useState} from 'react';
-import {combineDataByDate} from './helpers';
 import styles from './SummaryTable.module.scss';
 import loading_icon from '../../../assets/loading_icon.svg';
+import {combineDataByDate} from "../../../utils/helpers";
 
 const SummaryTable = ({searchData, isLoading, isError}) => {
   const [combinedData, setCombinedData] = useState([]);

@@ -6,13 +6,11 @@ const DocumentCount = ({ documentCount, setDocumentCount }) => {
   const [error, setError] = useState('');
 
   const validateDocumentCount = () => {
-    const count = parseInt(documentCount, 10);
+    const count = Number(documentCount);
 
     if (!documentCount) {
       setError("Обязательное поле");
-    } else if (isNaN(count) || count < 1) {
-      setError("Введите корректные данные");
-    } else if (count > 1000) {
+    } else if (isNaN(count) || count < 1 || count > 1000) {
       setError("Введите корректные данные");
     } else {
       setError("");
@@ -40,13 +38,12 @@ const DocumentCount = ({ documentCount, setDocumentCount }) => {
           setDocumentCount(newValue);
           setError('');
         }}
-        onBlur={() => setError(validateDocumentCount())}
+        onBlur={() => validateDocumentCount()} // Убран вызов setError, так как validateDocumentCount уже его устанавливает
         placeholder="от 1 до 1000"
       />
       {error && <div className={styles.errorMessage}>{error}</div>}
     </div>
   );
 };
-
 
 export default DocumentCount;

@@ -1,9 +1,9 @@
 // src/pages/SearchPage/SearchPage.module.scss
 @import '../../styles/_mixins.scss';
+@import '../../styles/_variables.scss';
 
 .searchContent {
 	width: 100%;
-	background-color: var(--scan-white);
 	padding-top: 123px;
 	max-width: 1440px;
 	flex-grow: 1;
@@ -11,7 +11,6 @@
 	flex-direction: column;
 	justify-content: space-around;
 	margin: 0 auto 60px;
-
 }
 
 .h1SearchPage {
@@ -40,12 +39,12 @@
 }
 
 .searchBlock {
-	//margin-top: 60px;
+	margin-top: 60px;
 	display: flex;
 	justify-content: space-between;
 	align-items: end;
-	//margin-right: 0;
-	//margin-left: 60px;
+	margin-right: 0;
+	margin-left: 60px;
 }
 
 .searchForm {
@@ -86,7 +85,7 @@
 
 .starMessage {
 	text-align: left;
-	color: #949494;
+	color: var(--scan-light-green);
 }
 
 .requiredAsterisk {

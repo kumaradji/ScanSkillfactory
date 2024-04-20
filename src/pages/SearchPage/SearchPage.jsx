@@ -1,19 +1,26 @@
 // src/pages/SearchPage/SearchPage.jsx
 import React from 'react';
 
-import styles from './SearchPage.module.scss';
+// Importing components
 import CompanyINN from './CompanyINN/CompanyINN';
 import Tonality from './Tonality/Tonality';
 import DocumentCount from './DocumentCount/DocumentCount';
 import DateInput from './DateInput/DateInput';
 import CheckboxBlock from './CheckboxBlock/CheckboxBlock';
+import styles from './SearchPage.module.scss';
 
+// Importing assets
 import LargePicture from "../../assets/search_page_large_picture.svg"
 import Folders from "../../assets/search_page_small_picture_folders.svg"
 import Documents from "../../assets/search_page_small_picture_sheet.svg"
 import {useSearchForm} from "../../hooks/useSearchForm";
 
+/**
+ * Component for the search page.
+ * Allows users to input search parameters and perform searches.
+ */
 const SearchPage = () => {
+  // Destructuring custom hook values
   const {
     companyINN,
     setCompanyINN,
@@ -31,9 +38,11 @@ const SearchPage = () => {
     navigate,
   } = useSearchForm();
 
+  // Handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    // Extract checkbox state values
     const {
       maxCompleteness,
       mainRole,
@@ -43,6 +52,7 @@ const SearchPage = () => {
       includeNewsSummaries
     } = checkboxStates;
 
+    // Map tonality value to API format
     let apiTonality;
     switch (tonality) {
       case 'Любая':
@@ -58,6 +68,7 @@ const SearchPage = () => {
         apiTonality = 'any';
     }
 
+    // Construct search parameters object
     if (isFormValid) {
       const searchParams = {
         issueDateInterval: {
@@ -88,9 +99,10 @@ const SearchPage = () => {
       console.log('Форма не валидна.');
     }
   };
-  
+
   return (
     <div className={styles.searchContent}>
+      {/* Search title and images */}
       <div className={styles.searchTitleBlock}>
         <div >
           <h1 className={styles.h1SearchPage}>Найдите необходимые <br />данные в пару кликов.</h1>
@@ -100,9 +112,11 @@ const SearchPage = () => {
         <img className={styles.searchPageSmallPictureFolders} src={Folders} alt="Folders image" />
       </div>
 
+      {/* Search form */}
       <div className={styles.searchBlock}>
         <form onSubmit={handleSubmit} className={styles.searchForm}>
           <div className={styles.leftPartSearchForm}>
+            {/* Search input components */}
             <CompanyINN companyINN={companyINN} setCompanyINN={setCompanyINN} />
             <Tonality tonality={tonality} setTonality={setTonality} />
             <DocumentCount documentCount={documentCount} setDocumentCount={setDocumentCount} />
@@ -110,13 +124,16 @@ const SearchPage = () => {
           </div>
 
           <div className={styles.rightPartSearchForm}>
+            {/* Checkbox block */}
             <CheckboxBlock checkboxStates={checkboxStates} handleCheckboxChange={handleCheckboxChange} />
+            {/* Submit button */}
             <div className={styles.rightPartSubmitButtonBlock}>
               <button className={styles.button} type="submit" disabled={!isFormValid}>Поиск</button>
               <p className={styles.starMessage}>* Обязательные к заполнению поля</p>
             </div>
           </div>
         </form>
+        {/* Large picture */}
         <img className={styles.searchPageLargePicture} src={LargePicture} alt="SearchPage image" />
       </div>
     </div>

@@ -1,3 +1,4 @@
+// DateInput.jsx
 import React, {useEffect, useState} from 'react';
 import styles from './DateInput.module.scss';
 

@@ -23,7 +23,6 @@ const CheckboxBlock = ({ checkboxStates, handleCheckboxChange }) => {
             name={key}
             checked={checkboxStates[key]}
             onChange={handleCheckboxChange}
-            // className={styles.hiddenCheckbox}
           />
           <label htmlFor={`checkbox-${key}`} className={checkboxStates[key] ? styles.checkedLabel : ""}>
             <span className={styles.customCheckbox}></span>
