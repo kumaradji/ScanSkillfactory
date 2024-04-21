@@ -9,8 +9,8 @@ import useWindowSize from '../../hooks/useWindowSize';
 
 import styles from './Header.module.scss';
 
-import greenLogo from '../../assets/scan_logo_green.svg';
-import whiteLogo from '../../assets/scan_logo_white.svg';
+import greenLogo from '../../assets/logo_green.svg';
+import whiteLogo from '../../assets/logo_white.svg';
 import fallout_menu_icon from '../../assets/fallout_menu_icon.svg';
 import close_icon from '../../assets/closing_icon.svg';
 
