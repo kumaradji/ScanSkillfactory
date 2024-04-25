@@ -79,6 +79,9 @@
 		width:  auto;
 		height: 392px;
 		margin-top: 50px;
+		object-fit: cover; // Изображение будет покрывать весь контейнер, сохраняя свои пропорции
+		object-position: left; // Позиционирование изображения с правой стороны
+
 	}
 
 	.carouselBlock__wrapper {
