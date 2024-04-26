@@ -1,6 +1,9 @@
 // DateInput.module.scss
 @import '../../../styles/_mixins.scss';
 @import '../../../styles/_variables.scss';
+@import '../../../styles/_mixins.scss';
+
+@include hide-arrow();
 
 .dateInputContainer {
   display: flex;
@@ -21,6 +24,19 @@
   text-align: center;
   width: 395px;
   visibility: hidden;
+}
+
+.dateInputContainer:after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  width: 20px;
+  height: 20px;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url('./../../../assets/fallout-arrow.svg');
+  background-repeat: no-repeat;
 }
 
 .formField {
@@ -130,5 +146,25 @@
 
   .dateErrorMessage {
     width: 335px;
+  }
+
+  .selectWrapper {
+    width: 335px;
+  }
+
+
+
+  .formFieldInputs {
+    max-height: none;
+    min-height: 43px;
+  }
+
+  .formField input[type="text"],
+  .formField input[type="date"],
+  .formField input[type="number"],
+  .formField option,
+  .formField select {
+    width: 335px;
+    height: 43px;
   }
 }

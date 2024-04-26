@@ -2,6 +2,7 @@
 @import '../../../styles/_mixins';
 @import '../../../styles/_variables.scss';
 
+
 .formField {
 	margin-bottom: 30px;
 }
@@ -70,16 +71,23 @@
 }
 
 @media (max-width: 1360px) {
+
+	.selectWrapper {
+		width: 345px;
+	}
+
+	.formFieldInputs {
+		max-height: none;
+		min-height: 43px;
+	}
+
+
 	.formField input[type="text"],
 	.formField input[type="date"],
 	.formField input[type="number"],
 	.formField option,
 	.formField select {
 		width: 335px;
+		height: 43px;
 	}
-
-	.selectWrapper {
-		width: 335px;
-	}
-
 }

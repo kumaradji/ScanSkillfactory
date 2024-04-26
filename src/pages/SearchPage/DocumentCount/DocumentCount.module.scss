@@ -65,3 +65,25 @@
 	border: 1px solid #FF5959;
 	outline-color: #FF5959;
 }
+
+@media (max-width: 1360px) {
+
+	.selectWrapper {
+		width: 335px;
+	}
+
+	.formFieldInputs {
+		max-height: none;
+		min-height: 43px;
+	}
+
+
+	.formField input[type="text"],
+	.formField input[type="date"],
+	.formField input[type="number"],
+	.formField option,
+	.formField select {
+		width: 335px;
+		height: 43px;
+	}
+}
