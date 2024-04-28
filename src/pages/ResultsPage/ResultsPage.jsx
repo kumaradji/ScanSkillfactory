@@ -3,8 +3,10 @@ import React, {useEffect} from 'react';
 import {useLocation, useNavigate} from 'react-router-dom';
 import {useAuth} from '../../hooks/AuthContext';
 import useSearchResults from '../../hooks/useSearchResults';
+
 import GeneralSummaryTable from './SummaryTable/SummaryTable';
 import ArticleCards from './ArticleCards/ArticleCards';
+
 import styles from './ResultsPage.module.scss';
 import ResultsLargeImg from '../../assets/search_results_large_picture.svg';
 

@@ -28,7 +28,9 @@ const DateInput = ({ startDate, setStartDate, endDate, setEndDate }) => {
 
   return (
     <div className={styles.formField}>
-      <label htmlFor="startDate">Диапазон поиска <span className={error ? `${styles.requiredAsterisk} ${styles.error}` : styles.requiredAsterisk}>*</span></label>
+      <label htmlFor="startDate">Диапазон поиска
+        <span className={error ? `${styles.requiredAsterisk} ${styles.error}` : styles.requiredAsterisk}>*</span>
+      </label>
       <div className={styles.formFieldDateInputs}>
         <div className={styles.dateInputContainer}>
           <input

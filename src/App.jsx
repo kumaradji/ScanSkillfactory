@@ -4,15 +4,12 @@ import {BrowserRouter as Router, Navigate, Route, Routes} from 'react-router-dom
 
 import {useAuth} from "./hooks/AuthContext";
 
-import Footer from './components/Footer/Footer';
-import user_pic_example from './assets/user_pic_example.png';
 import './styles/styles.scss';
+import User from './assets/user_pic_example.png';
 
-import './fonts/ferry.otf';
-import './fonts/InterRegular.ttf';
-
+import Header from "./components/Header/Header";
+import Footer from './components/Footer/Footer';
 import Authorization from "./components/Authorization/Authorization";
-import Header from "../src/components/Header/Header";
 import Main from "./pages/Main/Main";
 import ResultsPage from "./pages/ResultsPage/ResultsPage";
 import SearchPage from "./pages/SearchPage/SearchPage";
@@ -21,7 +18,7 @@ function App() {
   const {isLoggedIn, checkAuthStatus} = useAuth();
   const [userTariff, setUserTariff] = useState('beginner');
   const [userName, setUserName] = useState('');
-  const [userPicture, setUserPicture] = useState(user_pic_example);
+  const [userPicture, setUserPicture] = useState(User);
 
   useEffect(() => {
     if (!isLoggedIn) {
