@@ -1,5 +1,6 @@
 // TariffCard.module.scss
-@import '../../../styles/_variables.scss';
+@import '../../../styles/_variables';
+@import '../../../styles/_mixins';
 
 .resultPage__tariffCard {
 	width: 415px;
@@ -75,7 +76,7 @@
 .resultPage__yourTariffBadge {
 	width: 134px;
 	height: 24px;
-	background-color: #3BA5E0;
+	background-color: var(--scan-tariff-badge);
 	border-radius: 10px;
 	color: var(--scan-black);
 	font-size: 14px;
@@ -170,7 +171,8 @@
 	color: var(--scan-black);
 }
 
-@media (max-width: 1360px) {
+// Адаптивная верстка для мобильной версии 768px
+@include mobile {
 	.resultPage__tariffCard {
 		width: 335px;
 		min-width: 335px;
@@ -194,17 +196,14 @@
 		margin-bottom: -10px;
 	}
 
-
 	.resultPage__tariffNameBlock h3 {
 		font-size: 20px;
 		margin-bottom: 22px;
-
 	}
 
 	.resultPage__tariffNameBlock p {
 		font-size: 16px;
 		margin-bottom: 22px;
-
 	}
 
 	.resultPage__tariffIconBlock {

@@ -1,5 +1,12 @@
 // _mixins.scss
 
+// миксин для мобильных устройств
+@mixin mobile {
+	@media (max-width: 1024px) {
+		@content;
+	}
+}
+
 // миксин для кнопок
 @mixin button($width: 335px, $height: 59px, $border-radius: 5px, $font-family: 'InterRegular', $font-size: 22px, $background-color: var(--scan-blue), $color: var(--scan-white), $hover-background-color: var(--scan-light-blue), $hover-color: var(--scan-black)) {
 	width: $width;

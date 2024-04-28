@@ -1,7 +1,9 @@
 // Tonality.module.scss
 @import '../../../styles/_mixins';
-@import '../../../styles/_variables.scss';
+@import '../../../styles/_variables';
 
+// Миксин для скрытия стрелки
+@include hide-arrow();
 
 .formField {
 	margin-bottom: 30px;
@@ -27,6 +29,13 @@
 	box-shadow: 0 0 10px 0 var(--scan-shadow-light);
 }
 
+// Скрывает стандартную стрелку выпадающего списка для Chrome и Firefox
+.formField select {
+	-webkit-appearance: none; /* Chrome, Safari, newer versions of Opera */
+	-moz-appearance: none; /* Firefox */
+	appearance: none; /* Modern browsers */
+}
+
 .formFieldInputs {
 	max-height: 82px;
 	min-height: 82px;
@@ -46,7 +55,7 @@
 
 .inputError {
 	text-align: center;
-	color:var(--scan-light-green);
+	color: var(--scan-light-green);
 }
 
 .selectWrapper {
@@ -70,8 +79,15 @@
 	background-repeat: no-repeat;
 }
 
-@media (max-width: 1360px) {
+// Миксин для мобильных устройств
+@mixin mobile {
+	@media (max-width: 768px) {
+		@content;
+	}
+}
 
+// Адаптивная верстка для мобильной версии 768px
+@include mobile {
 	.selectWrapper {
 		width: 345px;
 	}
@@ -80,7 +96,6 @@
 		max-height: none;
 		min-height: 43px;
 	}
-
 
 	.formField input[type="text"],
 	.formField input[type="date"],

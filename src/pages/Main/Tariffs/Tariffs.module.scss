@@ -1,5 +1,6 @@
 // Tariffs.module.scss
-@import '../../../styles/_variables.scss';
+@import '../../../styles/_variables';
+@import '../../../styles/_mixins';
 
 .tariffs {
 	background-color: var(--scan-white);
@@ -40,7 +41,8 @@
 	}
 }
 
-@media (max-width: 1360px) {
+// Адаптивная верстка для мобильной версии 768px
+@include mobile {
 	.tariffs {
 		padding: 0 14px;
 		max-width: 375px;

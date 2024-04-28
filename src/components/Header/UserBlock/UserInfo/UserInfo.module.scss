@@ -1,5 +1,5 @@
 // UserInfo.module.scss
-
+@import '../../../../styles/_mixins';
 @import '../../../../styles/_variables';
 
 .userInfo {
@@ -48,7 +48,8 @@
 }
 
 
-@media (max-width: 1360px) {
+// Адаптивная верстка для мобильной версии 768px
+@include mobile {
 	.userInfo {
 		flex-direction: column;
 		margin-top: 100px;

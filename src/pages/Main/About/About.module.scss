@@ -1,6 +1,6 @@
 // About.module.scss
-@import '../../../styles/_mixins.scss';
-@import '../../../styles/_variables.scss';
+@import '../../../styles/_mixins';
+@import '../../../styles/_variables';
 
 .aboutBlock {
 	display: flex;
@@ -42,8 +42,8 @@
 	@include button($width: 335px, $height: 59px, $font-size: 22px);
 }
 
-@media (max-width: 1360px) {
-
+// Адаптивная верстка для мобильной версии 768px
+@include mobile {
 	.aboutBlock {
 		display: flex;
 		flex-direction: column;
@@ -72,5 +72,4 @@
 		width: 347px;
 		height: auto;
 	}
-
 }

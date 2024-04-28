@@ -1,7 +1,6 @@
 // src/components/Header/Navbar/Navbar.module.scss
-
-@import '../../../styles/_mixins.scss';
-@import '../../../styles/_variables.scss';
+@import '../../../styles/_mixins';
+@import '../../../styles/_variables';
 
 .navbar {
     display: flex;
@@ -12,9 +11,10 @@
 
 .navbar a:hover {
     opacity: 0.5;
-}  
+}
 
-@media (max-width: 1360px) {
+// Адаптивная верстка для мобильной версии 768px
+@include mobile {
     .navbar {
         display: flex;
         flex-direction: column;

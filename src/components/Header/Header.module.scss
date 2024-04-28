@@ -1,5 +1,6 @@
 // Header.module.scss
 @import '../../styles/_variables';
+@import '../../styles/_mixins';
 
 header {
     position: fixed;
@@ -8,7 +9,6 @@ header {
     right: 0;
     z-index: 1000;
     width: 100%;
-    background-color: var(--scan-white);
 }
 
 .header__content {
@@ -50,7 +50,7 @@ header {
 
 .header__regLink {
     text-decoration: none;
-    color: #888;
+    color: var(--scan-shadow-light-grey);
     margin-right: 10px;
 
     &:hover {
@@ -99,8 +99,8 @@ header {
     overflow-y: auto;
 }
 
-
-@media (max-width: 1360px) {
+// Адаптивная верстка для мобильной версии 768px
+@include mobile {
     .header__content {
         max-width: 375px;
         padding: 0 14px;
@@ -119,7 +119,6 @@ header {
         margin-right: 0;
         z-index: 2100;
     }
-
 
     .header__regBlock {
         margin-top: 80px;

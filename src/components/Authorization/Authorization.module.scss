@@ -1,6 +1,6 @@
 // Authorization.module.scss
 @import '../../styles/_mixins.scss';
-@import '../../styles/_variables.scss';
+@import '../../styles/_variables';
 
 .authPage {
 	width: 100%;
@@ -167,7 +167,6 @@
 	color: var(--scan-light-green);
 }
 
-
 .authBlock__socialMedia_buttons {
 	display: flex;
 	justify-content: start;
@@ -196,7 +195,8 @@
 	margin: auto;
 }
 
-@media (max-width: 1360px) {
+// Адаптивная верстка для мобильной версии 768px
+@include mobile {
 	.authPage {
 		max-width: 375px;
 		flex-direction: column;

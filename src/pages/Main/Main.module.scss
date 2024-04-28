@@ -1,8 +1,11 @@
 // Main.module.scss
 @import '../../styles/_variables.scss';
+@import '../../styles/_mixins.scss';
 
 main {
     width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 .mainPage {
@@ -12,11 +15,10 @@ main {
     margin: 0 auto;
 }
 
-@media (max-width: 1360px) {
-
+// Адаптивная верстка для мобильной версии 768px
+@include mobile {
     .mainPage {
         padding-top: 90px;
         max-width: 375px;
     }
-
 }

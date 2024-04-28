@@ -1,4 +1,6 @@
 // UserBlock.module.scss
+@import '../../../styles/_mixins';
+
 .userBlocks {
     display: flex;
     justify-content: space-evenly;
@@ -6,13 +8,10 @@
     min-width: 388px;
 }
 
-
-
-@media (max-width: 1360px) {
-
+// Адаптивная верстка для мобильной версии 768px
+@include mobile {
     .userBlocks {
         min-width: auto;
     }
-
 }
 

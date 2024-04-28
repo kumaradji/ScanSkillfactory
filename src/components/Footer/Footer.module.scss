@@ -1,7 +1,7 @@
 // src/components/Footer/Footer.module.scss
 
 @import '../../styles/_mixins.scss';
-@import '../../styles/_variables.scss';
+@import '../../styles/_variables';
 
 footer {
   width: 100%;
@@ -37,9 +37,8 @@ footer {
 }
 
 
-// адаптивная верстка
-@media (max-width: 1360px) {
-
+// Адаптивная верстка для мобильной версии 768px
+@include mobile {
   .footer {
     max-width: 375px;
     padding: 0 20px;

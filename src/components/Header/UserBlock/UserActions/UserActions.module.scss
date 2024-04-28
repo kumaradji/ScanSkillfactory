@@ -1,6 +1,6 @@
 // UserActions.module.scss
-@import '../../../../styles/_mixins.scss';
-@import '../../../../styles/_variables.scss';
+@import '../../../../styles/_mixins';
+@import '../../../../styles/_variables';
 
 .userActions__rectangle {
     display: flex;
@@ -10,7 +10,7 @@
     min-width: 175px;
     margin-right: 130px;
     border-radius: 5px;
-    background-color: #F3F3F3;
+    background-color: var(--scan-rectangle);
     border: none;
     align-items: center;
     justify-content: center;
@@ -28,7 +28,7 @@
     grid-template-columns: 3.2fr 0.8fr;
     grid-row-gap: 0;
     grid-column-gap: 5px;
-    color: rgba(0, 0, 0, 0.3);
+    color: var(--scan-shadow);
     font-size: 10px;
 }
 
@@ -53,11 +53,12 @@
 .userActions__limitCompaniesNumber {
     opacity: 1;
     font-size: 14px;
-    color: #8AC540;
+    color: var(--scan-limit);
     margin-left: 2px;
 }
 
-@media (max-width: 1360px) {
+// Адаптивная верстка для мобильной версии 768px
+@include mobile {
     .userActions__rectangle {
         margin-right: 0;
         margin-left: 30px;
