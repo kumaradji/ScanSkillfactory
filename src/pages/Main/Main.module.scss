@@ -3,22 +3,22 @@
 @import '../../styles/_mixins.scss';
 
 main {
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
+	width: 100%;
+	max-width: 1440px;
+	margin: 0 auto;
 }
 
 .mainPage {
-    padding: 93px 0 0 0;
-    max-width: 1440px;
-    flex-grow: 1;
-    margin: 0 auto;
+	padding: 93px 0 0 0;
+	max-width: 1440px;
+	flex-grow: 1;
+	margin: 0 auto;
 }
 
 // Адаптивная верстка для мобильной версии 768px
 @include mobile {
-    .mainPage {
-        padding-top: 90px;
-        max-width: 375px;
-    }
+	.mainPage {
+		padding-top: 90px;
+		max-width: 375px;
+	}
 }

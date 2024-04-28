@@ -45,7 +45,6 @@
 // Адаптивная верстка для мобильной версии 768px
 @include mobile {
 	.aboutBlock {
-		display: flex;
 		flex-direction: column;
 		padding: 0 14px;
 		max-width: 375px;
@@ -71,5 +70,9 @@
 	.aboutBlock__image {
 		width: 347px;
 		height: auto;
+	}
+
+	.aboutBlock__button {
+		@include button($width: 335px, $height: 59px, $font-size: 20px);
 	}
 }

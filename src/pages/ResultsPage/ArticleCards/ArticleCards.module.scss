@@ -1,5 +1,6 @@
 // ArticleCards.module.scss
-@import '../../../styles/_mixins.scss';
+@import '../../../styles/_mixins';
+@import '../../../styles/_variables';
 
 .articleCardsBlock {
     margin-right: 60px;
@@ -31,7 +32,8 @@
     width: 305px;
 }
 
-@media (max-width: 1360px) {
+// Адаптивная верстка для мобильной версии 768px
+@include mobile {
     .articleCardsBlock {
         margin-right: 14px;
         margin-left: 14px;
@@ -55,6 +57,7 @@
     }
 
     .showMore {
+        @include button($width: 335px, $height: 59px, $font-size: 20px);
         width: 335px;
     }
 }

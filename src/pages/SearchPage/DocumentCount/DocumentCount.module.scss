@@ -1,3 +1,7 @@
+// DocumentCount.module.scss
+@import '../../../styles/_mixins';
+@import '../../../styles/_variables';
+
 .formField {
 	margin-bottom: 30px;
 }
@@ -17,9 +21,9 @@
 	width: 242px;
 	padding: 8px;
 	border-radius: 4px;
-	border: 1px solid #ccc;
+	border: 1px solid var(--scan-light-grey);
 	font-size: 14px;
-	box-shadow: 0 0 10px 0 #00000011;
+	box-shadow: 0 0 10px 0 var(--scan-shadow-light);
 }
 
 .formFieldInputs {
@@ -29,7 +33,7 @@
 
 .inputError {
 	text-align: center;
-	color: #949494;
+	color: var(--scan-light-green);
 }
 
 .requiredAsterisk {
@@ -46,7 +50,7 @@
 }
 
 .formField .errorMessage {
-	color: #FF5959;
+	color: var(--scan-red);
 	font-size: 14px;
 	margin-top: 8px;
 	text-align: center;
@@ -55,19 +59,19 @@
 
 .formField input.inputError,
 .formField select.inputError {
-	border: 1px solid #FF5959;
-	outline-color: #FF5959;
-	color: #FF5959;
+	border: 1px solid var(--scan-red);
+	outline-color: var(--scan-red);
+	color: var(--scan-red);
 }
 
 .formField input.error,
 .formField select.error {
-	border: 1px solid #FF5959;
-	outline-color: #FF5959;
+	border: 1px solid var(--scan-red);
+	outline-color: var(--scan-red);
 }
 
-@media (max-width: 1360px) {
-
+// Адаптивная верстка для мобильной версии 768px
+@include mobile {
 	.selectWrapper {
 		width: 335px;
 	}
@@ -76,7 +80,6 @@
 		max-height: none;
 		min-height: 43px;
 	}
-
 
 	.formField input[type="text"],
 	.formField input[type="date"],

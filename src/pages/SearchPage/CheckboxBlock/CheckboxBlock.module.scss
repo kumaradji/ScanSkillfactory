@@ -1,6 +1,6 @@
 // CheckboxBlock.module.scss
-@import '../../../styles/_mixins.scss';
-@import '../../../styles/_variables.scss';
+@import '../../../styles/_mixins';
+@import '../../../styles/_variables';
 
 .rightPartSearchCheckboxBlock {
   width: 406px;
@@ -45,7 +45,8 @@
   color: var(--scan-black);
 }
 
-@media (max-width: 1360px) {
+// Адаптивная верстка для мобильной версии 768px
+@include mobile {
   .rightPartSearchCheckboxBlock {
     display: none;
   }

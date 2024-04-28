@@ -2,16 +2,16 @@
 @import '../../../styles/_mixins';
 
 .userBlocks {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    min-width: 388px;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	min-width: 388px;
 }
 
 // Адаптивная верстка для мобильной версии 768px
 @include mobile {
-    .userBlocks {
-        min-width: auto;
-    }
+	.userBlocks {
+		min-width: auto;
+	}
 }
 

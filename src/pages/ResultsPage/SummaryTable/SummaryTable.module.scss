@@ -1,6 +1,6 @@
 // SummaryTable.module.scss
-@import '../../../styles/_mixins.scss';
-@import '../../../styles/_variables.scss';
+@import '../../../styles/_mixins';
+@import '../../../styles/_variables';
 
 .summaryTable {
   margin-bottom: 60px;
@@ -83,7 +83,7 @@
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   background-color: var(--scan-green);
-  color: white;
+  color: var(--scan-white);
 }
 
 .summaryTable__data {
@@ -149,7 +149,8 @@
   margin-left: 200px;
 }
 
-@media (max-width: 1360px) {
+// Адаптивная верстка для мобильной версии 768px
+@include mobile {
   .summaryTable {
     margin-top: 0;
   }
@@ -183,7 +184,7 @@
     display: flex;
     flex-direction: row;
     background-color: var(--scan-green);
-    color: white;
+    color: var(--scan-white);
     height: 75px;
     width: 298px;
     margin-left: -2px;
@@ -196,7 +197,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 99.333333px;
+    min-width: 100px;
     text-align: center;
   }
 
@@ -218,8 +219,7 @@
   }
 
   .summaryTable__loadingData {
-    margin-left: 0px;
-    margin-top: 10px;
+    margin: 10px 0 0 0;
   }
 
   .summaryTable__loadingData_summary {
@@ -237,8 +237,7 @@
     align-items: center;
     font-size: 14px;
     text-align: center;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 0 10px 0 10px;
   }
 
   .summaryTable__h2 {
@@ -246,12 +245,10 @@
   }
 
   .summaryTable__titleBlock {
-    margin-right: 14px;
-    margin-left: 14px;
+    margin: 0 14px 0 14px;
   }
 
   .summaryTable__titleBlock_p {
     font-size: 18px;
   }
-
 }

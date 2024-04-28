@@ -1,6 +1,6 @@
 // src/pages/SearchPage/SearchPage.module.scss
-@import '../../styles/_mixins.scss';
-@import '../../styles/_variables.scss';
+@import '../../styles/_mixins';
+@import '../../styles/_variables';
 
 .searchContent {
 	width: 100%;
@@ -100,7 +100,8 @@
 	font-size: 25px;
 }
 
-@media (max-width: 1360px) {
+// Адаптивная верстка для мобильной версии 768px
+@include mobile {
 	.searchContent {
 		padding: 100px;
 		max-width: 375px;
