@@ -28,15 +28,15 @@
 	height: 48px;
 	margin-top: 20px;
 	margin-bottom: 80px;
-	font-size: 20px;
 }
 
 .aboutBlock__image {
 	margin-left: -30px;
 	margin-top: 15px;
 	width: 629px;
-	height: 100%;
+	height: auto;
 }
+
 
 .aboutBlock__button {
 	@include button($width: 335px, $height: 59px, $font-size: 22px);
@@ -68,6 +68,7 @@
 	}
 
 	.aboutBlock__image {
+		margin-left: 14px;
 		width: 347px;
 		height: auto;
 	}
@@ -76,3 +77,46 @@
 		@include button($width: 335px, $height: 59px, $font-size: 20px);
 	}
 }
+
+@include small-laptop {
+	.aboutBlock__h1 {
+		width: 643px;
+		height: auto;
+	}
+
+	.aboutBlock__p {
+		width: 543px;
+		height: auto;
+	}
+
+	.aboutBlock__image {
+		width: 580px;
+		height: auto;
+	}
+}
+
+
+
+@include tablet {
+	.aboutBlock__h1 {
+		font-size: 30px;
+		width: 543px;
+		height: auto;
+	}
+
+	.aboutBlock__p {
+		width: 443px;
+		height: auto;
+		padding: 30px 0 0 0;
+	}
+
+	.aboutBlock__image {
+		width: 329px;
+		height: auto;
+	}
+
+	.aboutBlock__info {
+		max-width: 100%;
+	}
+}
+

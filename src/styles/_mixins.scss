@@ -7,6 +7,27 @@
 	}
 }
 
+// Миксин для планшетов
+@mixin tablet {
+	@media (min-width: 768px) and (max-width: 1024px) {
+		@content;
+	}
+}
+
+// Миксин для небольших ноутбуков
+@mixin small-laptop {
+	@media (min-width: 1025px) and (max-width: 1366px) {
+		@content;
+	}
+}
+
+// Миксин для больших ноутбуков и настольных мониторов
+@mixin desktop {
+	@media (min-width: 1367px) {
+		@content;
+	}
+}
+
 // миксин для кнопок
 @mixin button($width: 335px, $height: 59px, $border-radius: 5px, $font-family: 'InterRegular', $font-size: 22px, $background-color: var(--scan-blue), $color: var(--scan-white), $hover-background-color: var(--scan-light-blue), $hover-color: var(--scan-black)) {
 	width: $width;

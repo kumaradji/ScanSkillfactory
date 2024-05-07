@@ -8,6 +8,11 @@
 	margin: 100px auto;
 }
 
+//.carouselBlock__title {
+//	width: 274px;
+//	height: 68px;
+//}
+
 .carouselBlock__wrapper {
 	display: flex;
 	max-width: 1440px;
@@ -80,8 +85,8 @@
 		width: auto;
 		height: 392px;
 		margin-top: 50px;
-		object-fit: cover; // Изображение будет покрывать весь контейнер, сохраняя свои пропорции
-		object-position: left; // Позиционирование изображения с правой стороны
+		object-fit: cover;
+		object-position: left;
 	}
 
 	.carouselBlock__wrapper {
@@ -89,6 +94,11 @@
 		min-width: 350px;
 		width: 100%;
 		margin: 14px auto 0;
+	}
+
+	.carouselBlock__title {
+		width: 274px;
+		height: 68px;
 	}
 
 	.carouselBlock__content {

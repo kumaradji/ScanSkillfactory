@@ -26,7 +26,7 @@ const Carousel = () => {
 
   return (
     <div className={styles.carouselBlock}>
-      <h2>Почему именно мы</h2>
+      <h2 className={styles.carouselBlock__title}>Почему именно мы</h2>
 
       <div className={styles.carouselBlock__wrapper}>
         <div className={styles.carouselBlock__arrow_left} onClick={scrollLeft}>
