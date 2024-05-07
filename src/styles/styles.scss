@@ -18,7 +18,7 @@ body, html {
 	margin: 0;
 	padding: 0;
 	font-family: "InterRegular", sans-serif;
-	font-size: 1vw; // Используйте vw для "резинового" размера шрифта
+	font-size: 14px;
 }
 
 a {
@@ -65,7 +65,7 @@ input {
 
 	h1, h2 {
 		font-size: 28px; // Фиксированный размер шрифта для мобильных
-		width: auto; // Убрать фиксированную ширину для h2
+		width: auto; // Убрать фиксированную ширину
 	}
 
 	.app {
