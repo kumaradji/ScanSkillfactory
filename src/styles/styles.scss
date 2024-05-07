@@ -15,7 +15,8 @@
 
 body, html {
 	width: 100%;
-	margin: 0;
+	max-width: 1440px;
+	margin: 0 auto;
 	padding: 0;
 	font-family: "InterRegular", sans-serif;
 	font-size: 14px;
@@ -32,47 +33,48 @@ a:hover {
 
 h1 {
 	font-family: Ferry, sans-serif;
-	font-size: 4.166vw; // 60px при ширине 1440px
+	font-size: 60px;
 }
 
 h2 {
 	font-family: Ferry, sans-serif;
-	font-size: 3.125vw; // 45px при ширине 1440px
+	font-size: 45px;
 }
 
 .app {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-	max-width: 100%;
+	max-width: 1440px;
 	margin: 0 auto;
+	width: 100%;
 }
 
 .button {
-	font-size: 1.527vw; // 22px при ширине 1440px
+	font-size: 22px;
 }
 
 input {
 	font-family: 'InterRegular', sans-serif;
-	font-size: 1.111vw; // 16px при ширине 1440px
+	font-size: 16px;
 }
 
-// Адаптивная верстка для мобильной версии 768px
-@include mobile {
-	body, html {
-		font-size: 14px; // Фиксированный размер шрифта для мобильных
+@media (max-width: 1024px) {
+
+	h1 {
+		font-size: 28px;
 	}
 
-	h1, h2 {
-		font-size: 28px; // Фиксированный размер шрифта для мобильных
-		width: auto; // Убрать фиксированную ширину
+	h2 {
+		font-size: 28px;
+		width: 274px;
 	}
 
 	.app {
-		max-width: 768px; // Фиксированная максимальная ширина для мобильных
+		max-width: 768px;
 	}
 
 	.button {
-		font-size: 20px; // Фиксированный размер шрифта для мобильных
+		font-size: 20px;
 	}
 }

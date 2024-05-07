@@ -30,15 +30,19 @@
 	}
 }
 
+@media (max-width: 1360px) {
+	// Изменение размера шрифта кнопок при разрешении экрана до 1360px
+	.button {
+		font-size: 20px;
+	}
+}
+
 // миксин для скрывания стрелок даты
 // Скрывает стрелку для всех браузеров
 @mixin hide-arrow() {
+	// Скрывает стрелку для Chrome и Safari
 	input[type="date"]::-webkit-calendar-picker-indicator {
-		background: url('../assets/fallout-arrow.svg') no-repeat;
-		color: transparent; // делает текст прозрачным, но сохраняет элемент интерактивным
-		background-size: contain;
-		cursor: pointer;
-		display: block; // Убедитесь, что элемент отображается
+		display: none;
 	}
 
 	// Скрывает стрелку для IE и Edge
