@@ -15,3 +15,14 @@
 	}
 }
 
+@include tablet {
+	.userBlocks {
+		min-width: auto;
+	}
+}
+@include small-laptop {
+	.userBlocks {
+		min-width: auto;
+	}
+}
+

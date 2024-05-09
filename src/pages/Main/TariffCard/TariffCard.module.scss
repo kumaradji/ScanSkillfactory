@@ -175,7 +175,7 @@
 
 // Адаптивная верстка для мобильной версии 768px
 @include mobile {
-	.tariffCard__tariffCard {
+	.tariffCard {
 		width: 335px;
 		min-width: 335px;
 		height: 512px;
