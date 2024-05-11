@@ -5,6 +5,7 @@
 @include hide-arrow();
 
 .dateInputContainer {
+	position: relative;
 	display: flex;
 	gap: 10px;
 	width: 100%;
@@ -25,18 +26,41 @@
 	visibility: hidden;
 }
 
-.dateInputContainer:after {
+.dateInputWrapper {
+	position: relative;
+	display: flex;
+	align-items: center;
+	width: 176px;
+	height: 43px;
+}
+
+.dateIcon {
 	content: '';
 	position: absolute;
 	pointer-events: none;
 	width: 20px;
 	height: 20px;
 	right: 8px;
-	top: 21px;
+	top: 50%;
 	transform: translateY(-50%);
 	background-image: url('./../../../assets/fallout-arrow.svg');
 	background-repeat: no-repeat;
+	background-size: contain;
 }
+
+//.dateInputWrapper:after {
+//	content: '';
+//	position: absolute;
+//	pointer-events: none;
+//	width: 20px;
+//	height: 20px;
+//	right: 8px;
+//	top: 21px;
+//	transform: translateY(-50%);
+//	background-image: url('./../../../assets/fallout-arrow.svg');
+//	background-repeat: no-repeat;
+//	background-size: contain;
+//}
 
 .formField {
 	margin-bottom: 30px;
