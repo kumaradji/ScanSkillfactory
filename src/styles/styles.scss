@@ -13,6 +13,16 @@
 	src: local('InterRegular'), url('../fonts/InterRegular.ttf') format('truetype');
 }
 
+@font-face {
+	font-family: 'InterMedium';
+	src: local('InterMedium'), url('../fonts/InterMedium.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'InterBold';
+	src: local('InterBold'), url('../fonts/InterBold.ttf') format('truetype');
+}
+
 body, html {
 	width: 100%;
 	max-width: 1440px;
@@ -45,6 +55,11 @@ h1 {
 
 h2 {
 	font-family: Ferry, sans-serif;
+	font-size: calc(1.25rem + 1.5vw);
+}
+
+h3 {
+	font-family: InterMedium, sans-serif;
 	font-size: calc(1.25rem + 1.5vw);
 }
 

@@ -40,7 +40,7 @@ const SummaryTable = ({searchData, isLoading, isError}) => {
   return (
     <div className={styles.summaryTable}>
       <h2 className={styles.summaryTable__h2}>Общая сводка</h2>
-      <p className={styles.summaryTable__titleBlock}>Найдено данных: {totalDataCount}</p>
+      <div className={styles.summaryTable__titleBlock}>Найдено данных: {totalDataCount}</div>
       <div className={styles.summaryTable__tableAndArrows}>
         <button className={styles.summaryTable__scrollBtn}
                 onClick={() => scrollTable('left')}></button>

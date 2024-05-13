@@ -48,20 +48,6 @@
 	background-size: contain;
 }
 
-//.dateInputWrapper:after {
-//	content: '';
-//	position: absolute;
-//	pointer-events: none;
-//	width: 20px;
-//	height: 20px;
-//	right: 8px;
-//	top: 21px;
-//	transform: translateY(-50%);
-//	background-image: url('./../../../assets/fallout-arrow.svg');
-//	background-repeat: no-repeat;
-//	background-size: contain;
-//}
-
 .formField {
 	margin-bottom: 30px;
 }
@@ -86,15 +72,15 @@
 	box-shadow: 0 0 10px 0 var(--scan-shadow-light);
 }
 
-.formFieldInputs {
-	max-height: 82px;
-	min-height: 82px;
-}
-
-.inputError {
-	text-align: center;
-	color: var(--scan-light-green);
-}
+//.formFieldInputs {
+//	max-height: 82px;
+//	min-height: 82px;
+//}
+//
+//.inputError {
+//	text-align: center;
+//	color: var(--scan-light-green);
+//}
 
 .formField input:focus,
 .formField option:focus,
@@ -168,17 +154,16 @@
 		flex-direction: column;
 	}
 
+	.dateInputWrapper {
+		position: relative;
+		display: flex;
+		align-items: center;
+		width: 335px;
+		height: 43px;
+	}
+
 	.dateErrorMessage {
 		width: 335px;
-	}
-
-	.selectWrapper {
-		width: 335px;
-	}
-
-	.formFieldInputs {
-		max-height: none;
-		min-height: 43px;
 	}
 
 	.formField input[type="text"],

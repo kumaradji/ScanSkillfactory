@@ -61,7 +61,9 @@
 
 .button {
 	@include button;
+	width: 305px;
 	margin-bottom: 10px;
+	margin-left: 30px;
 }
 
 .leftPartSearchForm {
@@ -86,6 +88,9 @@
 .starMessage {
 	text-align: left;
 	color: var(--scan-light-green);
+	font-size: 14px;
+	margin-left: 30px;
+	
 }
 
 .requiredAsterisk {
