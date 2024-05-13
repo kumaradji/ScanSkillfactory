@@ -57,7 +57,7 @@ const SummaryTable = ({searchData, isLoading, isError}) => {
                 <p className={styles.summaryTable__loadingData_sign}>Загружаем данные...</p>
               </div>
             ) : isError ? (
-              <div className={styles.summaryTable__error}>
+              <div >
                 <p className={styles.summaryTable__error500}>Ошибка сервера. Попробуйте чуть позже или проверьте свой тариф.</p>
               </div>
             ) : (

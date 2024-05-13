@@ -79,6 +79,7 @@
 .summaryTable__headers {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 133px;
   height: 158px;
   border-top-left-radius: 10px;
@@ -136,10 +137,6 @@
   font-size: 18px;
   text-align: center;
   margin-top: 3px;
-}
-
-.summaryTable__error {
-
 }
 
 .summaryTable__error500 {
