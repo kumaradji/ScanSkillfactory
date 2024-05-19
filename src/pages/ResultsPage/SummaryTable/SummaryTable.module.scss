@@ -139,6 +139,13 @@
   margin-top: 3px;
 }
 
+.summaryTable__error,
+.summaryTable__errorMessage {
+  padding: 400px 0 100px 0;
+  font-size: 30px;
+  margin-left: 100px;
+}
+
 .summaryTable__error500 {
   display: flex;
   justify-content: center;
@@ -249,5 +256,28 @@
 
   .summaryTable__titleBlock_p {
     font-size: 18px;
+  }
+}
+
+@include tablet {
+
+  .summaryTable__tableAndArrows {
+    width: 669px;
+
+  }
+
+  .summaryTable__wrapperMain {
+    max-width: 698px;
+    width: 698px;
+  }
+
+  .summaryTable__wrapper {
+    width: 698px;
+  }
+
+  .summaryTable__wrapperMain {
+    max-width: 668px;
+    min-width: 668px;
+
   }
 }

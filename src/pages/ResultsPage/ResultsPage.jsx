@@ -24,8 +24,8 @@ const ResultsPage = () => {
     }
   }, [isLoggedIn, navigate]);
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
+  if (error || (!isLoading && (!documentData || !Array.isArray(documentData) || documentData.length === 0))) {
+    return <div className={styles.error}>Ошибка полученных данных</div>;
   }
 
   return (
@@ -59,10 +59,9 @@ const ResultsPage = () => {
           <GeneralSummaryTable
             searchData={histogramData}
             isLoading={isLoading}
-            isError={!!error}
           />
 
-          {!error && documentData && Array.isArray(documentData) && documentData.length > 0 && (
+          {documentData && Array.isArray(documentData) && documentData.length > 0 && (
             <ArticleCards documentsData={documentData} />
           )}
         </>

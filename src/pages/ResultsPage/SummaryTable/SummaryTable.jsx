@@ -4,7 +4,7 @@ import styles from './SummaryTable.module.scss';
 import loading_icon from '../../../assets/loading_icon.svg';
 import {combineDataByDate} from "../../../utils/helpers";
 
-const SummaryTable = ({searchData, isLoading, isError}) => {
+const SummaryTable = ({ searchData, isLoading, isError }) => {
   const [combinedData, setCombinedData] = useState([]);
   const [totalDataCount, setTotalDataCount] = useState(0);
 
@@ -18,7 +18,6 @@ const SummaryTable = ({searchData, isLoading, isError}) => {
 
   useEffect(() => {
     if (searchData && !isError) {
-
       const totalDocuments = searchData.data.find(histogram => histogram.histogramType === 'totalDocuments');
       if (totalDocuments) {
         const total = totalDocuments.data.reduce((acc, item) => acc + item.value, 0);
@@ -53,12 +52,12 @@ const SummaryTable = ({searchData, isLoading, isError}) => {
           <div className={styles.summaryTable__wrapper} ref={tableWrapperRef}>
             {isLoading ? (
               <div className={styles.summaryTable__loadingData}>
-                <img src={loading_icon} alt="Loading" className={styles.summaryTable__loadingData_summary}/>
+                <img src={loading_icon} alt="Loading" className={styles.summaryTable__loadingData_summary} />
                 <p className={styles.summaryTable__loadingData_sign}>Загружаем данные...</p>
               </div>
             ) : isError ? (
-              <div >
-                <p className={styles.summaryTable__error500}>Ошибка сервера. Попробуйте чуть позже или проверьте свой тариф.</p>
+              <div className={styles.summaryTable__error}>
+                <p className={styles.summaryTable__errorMessage}>Ошибка полученных данных</p>
               </div>
             ) : (
               <div className={styles.summaryTable__data}>
@@ -84,5 +83,3 @@ const SummaryTable = ({searchData, isLoading, isError}) => {
 };
 
 export default SummaryTable;
-
-
