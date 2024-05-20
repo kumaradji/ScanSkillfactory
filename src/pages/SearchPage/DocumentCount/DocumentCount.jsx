@@ -1,10 +1,23 @@
-// src/pages/SearchPage/DocumentCount/DocumentCount.jsx
+// DocumentCount.jsx
+/**
+ * DocumentCount Component.
+ * This component handles the input for specifying the number of documents to be displayed in a search result.
+ * It provides functionality for input validation and error display.
+ *
+ * @param {number} documentCount - The current count of documents to be displayed.
+ * @param {Function} setDocumentCount - A function to update the document count state.
+ * @returns {JSX.Element} The DocumentCount component with an input field for specifying the document count.
+ */
 import React, {useEffect, useState} from 'react';
 import styles from './DocumentCount.module.scss';
 
 const DocumentCount = ({ documentCount, setDocumentCount }) => {
   const [error, setError] = useState('');
 
+  /**
+   * Validate the document count.
+   * Sets appropriate error messages based on the validity of the document count.
+   */
   const validateDocumentCount = () => {
     const count = Number(documentCount);
 
@@ -17,10 +30,12 @@ const DocumentCount = ({ documentCount, setDocumentCount }) => {
     }
   };
 
+  // Validate the document count whenever documentCount changes
   useEffect(() => {
     validateDocumentCount();
   }, [documentCount]);
 
+  // Render the DocumentCount component
   return (
     <div className={`${styles.formField} ${styles.formFieldInputs}`}>
       <label htmlFor="documentCount">
@@ -31,19 +46,23 @@ const DocumentCount = ({ documentCount, setDocumentCount }) => {
         type="number"
         id="documentCount"
         name="documentCount"
+        // Apply error styles if there's an error
         className={error ? styles.inputError : ''}
         value={documentCount}
         onChange={(e) => {
           const newValue = e.target.value;
           setDocumentCount(newValue);
+          // Clear error on input change
           setError('');
         }}
-        onBlur={() => validateDocumentCount()} // Убран вызов setError, так как validateDocumentCount уже его устанавливает
+        // Validate the document count on blur
+        onBlur={() => validateDocumentCount()}
         placeholder="от 1 до 1000"
       />
+      {/* Display error message if there's an error */}
       {error && <div className={styles.errorMessage}>{error}</div>}
     </div>
   );
 };
 
-export default DocumentCount;
+export default DocumentCount; 

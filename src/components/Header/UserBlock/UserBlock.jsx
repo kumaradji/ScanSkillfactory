@@ -1,4 +1,21 @@
 // UserBlock.jsx
+/**
+ * UserBlock Component.
+ * This component serves as a container for user-related components and actions.
+ * It conditionally renders the UserActions or UserInfo components based on the
+ * current state of the application, such as whether the user is logged in,
+ * whether the app is in mobile view, and whether the menu is visible.
+ * It also handles user data fetching simulation and name formatting.
+ *
+ * @param {boolean} isLoggedIn - Flag indicating whether the user is logged in.
+ * @param {string} userName - The name of the logged-in user.
+ * @param {string} userPicture - The URL of the user's profile picture.
+ * @param {Function} setUserName - Function to set the user's name.
+ * @param {Function} setUserPicture - Function to set the user's profile picture.
+ * @param {boolean} isMobile - Flag indicating whether the app is in mobile view.
+ * @param {boolean} isMenuVisible - Flag indicating whether the mobile menu is visible.
+ * @returns {JSX.Element} The UserBlock component with user actions or information.
+ */
 import React, {useEffect, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 

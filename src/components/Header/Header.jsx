@@ -1,14 +1,24 @@
-// src/components/Header/Header.jsx
+// Header.jsx
+/**
+ * Header Component.
+ * This component serves as the main header for the application, providing navigation and user authentication controls.
+ * It adapts to different screen sizes and toggles visibility of the mobile menu.
+ * The header also handles automatic logout when the authentication token expires.
+ *
+ * @param {boolean} isLoggedIn - Indicates if the user is currently logged in.
+ * @param {string} userName - The name of the logged-in user.
+ * @param {string} userPicture - The URL of the user's profile picture.
+ * @param {Function} setUserName - Function to update the user's name.
+ * @param {Function} setUserPicture - Function to update the user's profile picture.
+ * @returns {JSX.Element} The Header component.
+ */
 import React, {useEffect, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
-
 import Navbar from './Navbar/Navbar';
 import UserBlock from './UserBlock/UserBlock';
 import {useAuth} from '../../hooks/AuthContext';
 import useWindowSize from '../../hooks/useWindowSize';
-
 import styles from './Header.module.scss';
-
 import greenLogo from '../../assets/logo_green.svg';
 import whiteLogo from '../../assets/logo_white.svg';
 import fallout_menu_icon from '../../assets/fallout_menu_icon.svg';
@@ -20,21 +30,25 @@ const Header = ({isLoggedIn, userName, userPicture, setUserName, setUserPicture}
   const {width} = useWindowSize();
   const isMobile = width <= 1360;
 
+  // Toggles the visibility of the mobile menu
   const toggleMenuVisibility = () => {
     setIsMenuVisible(!isMenuVisible);
   };
 
   const navigate = useNavigate();
 
+  // Navigates to the authentication page
   const handleLoginClick = () => {
     navigate('/auth');
   };
 
+  // Handles login and closes the mobile menu
   const handleLoginAndCloseMenu = () => {
     handleLoginClick();
     setIsMenuVisible(false);
   };
 
+  // Sets up an interval to check for token expiration and logs out the user if the token has expired
   useEffect(() => {
     const interval = setInterval(() => {
       const tokenExpire = localStorage.getItem('tokenExpire');
@@ -50,14 +64,17 @@ const Header = ({isLoggedIn, userName, userPicture, setUserName, setUserPicture}
     return () => clearInterval(interval);
   }, []);
 
+  // Renders the header with navigation, user block, and mobile menu controls
   return (
     <header className={isMenuVisible && isMobile ? 'menu-visible' : ''}>
       <div className={styles.header__content}>
         <img className={styles.header__logo} src={isMenuVisible && isMobile ? whiteLogo : greenLogo}
              alt="Scan logo"/>
 
+        {/* Navigation bar for non-mobile view */}
         {!isMobile && <Navbar/>}
 
+        {/* User block for non-mobile view when the user is logged in */}
         {!isMobile && isLoggedIn && (
           <div className={styles.header__rightSection}>
             <UserBlock
@@ -70,6 +87,7 @@ const Header = ({isLoggedIn, userName, userPicture, setUserName, setUserPicture}
           </div>
         )}
 
+        {/* User block for mobile view when the menu is not visible */}
         {isMobile && !isMenuVisible && (
           <UserBlock
             isLoggedIn={isLoggedIn}
@@ -82,6 +100,7 @@ const Header = ({isLoggedIn, userName, userPicture, setUserName, setUserPicture}
           />
         )}
 
+        {/* Menu icon for mobile view */}
         {isMobile && (
           <img src={isMenuVisible ? close_icon : fallout_menu_icon}
                alt="Menu" className={styles.header__logo_menuIcon}

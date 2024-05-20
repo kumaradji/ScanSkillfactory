@@ -83,7 +83,9 @@ const Authorization = () => {
 
             {/* Login button */}
             <div className={styles.authBlock__authForm_button_div}>
-              <button className={styles.authBlock__authForm_button} type="submit" disabled={!username || !password}>Войти</button>
+              <button className={styles.authBlock__authForm_button} type="submit"
+                      disabled={!username || !password}>Войти
+              </button>
             </div>
 
             {/* Password reset link */}

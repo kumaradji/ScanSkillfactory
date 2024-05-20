@@ -1,4 +1,4 @@
-// src/hooks/useWindowSize.js
+// useWindowSize.js
 import {useEffect, useState} from 'react';
 
 function useWindowSize() {
